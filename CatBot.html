@@ -1,0 +1,107 @@
+<html>
+<body>
+<div style="
+      top: 250;
+      left: 250;
+      position: absolute;
+      z-index: 1;
+      visibility: show;">
+
+      <style>
+      body {
+        background-image: url('cat-meme.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      </style>
+
+      <h1 style = "font-family:courier,arial,helvetica;">Welcome to CatBot</h1>
+      <p style = "font-family:courier,arial,helvetica;">Have a chat with a cat!</p>
+
+      <style>
+      .demo {
+        border: none;
+        background-color: inherit;
+        padding: 12px 26px;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .default {
+        color: black;
+        background: #EB6129;
+      }
+      .default:hover {
+        background: #EBE66C;
+      }
+      </style>
+
+
+      <button onclick="myFunction()"
+        class = "demo default">
+        Say hello
+      </button>
+      <p id="demo"></p>
+
+</div>
+
+<script>
+  function myFunction() {
+    // event.preventDefault();
+    document.getElementById("demo").innerHTML =  respond(prompt("Hello?"));
+  }
+
+  function respond(response) {
+    // DON'T CHANGE THIS BLOCK
+    if (response === null) {
+      return false;
+    }
+
+    var person = prompt("Who are you? =(＾● ⋏ ●＾)=");
+    if (person != null) {
+      var ans  = prompt("Hello " + person + ", have you come to entertain me?");
+      if (/no|nope|not really/i.test(ans)) {
+        subject = prompt("Suit yourself =(＾~ ⋏ ~＾)= \n\nWhat would YOU like to talk about?");
+      } else if (/yes|sure|maybe|yeah/i.test(ans)) {
+        subject = prompt("I like you, "+ person + " ✧ =(＾● w ●＾)= ✧ \n\nWhat would you like to talk about?");
+      } else {
+     	  subject = prompt("Hm, I see =(＾● _ ●＾)= \n\nWhat do you want to talk about?");
+      }
+
+      if (/naps|nap|napping/i.test(subject)) {
+        naps = prompt("I love naps! =(＾-- w --＾)= \n\nDo you like naps?");
+        if (/yes|yeah|yep/i.test(naps)) {
+          response = prompt("Yay! I knew we would get along, "+ person +"!");
+        }
+        else if (/yes|yeah|yep/i.test(naps)) {
+          response = prompt("=(＾o ⋏ o＾)=");
+        }
+      } else if (/food/i.test(subject)) {
+        food = prompt("I love food! =(＾✧ w ✧＾)= \n\nDo you like food?");
+        if (/yes|yeah|yep/i.test(food)) {
+          response = prompt("Yay! I knew we would get along, "+ person +"!");
+        }
+        else if (/no|nope|not really/i.test(food)) {
+          response = prompt("=(＾o ⋏ o＾)=");
+        }
+      } else if (/red dot/i.test(subject)) {
+        dot = prompt("You speak of the red dot!? Tell me what you know! =(＾o ⋏ o＾)=");
+        dot = prompt("Thank you, "+ person +", for sharing your great wisdom!")
+      } else if (/vacuum|vacuums/i.test(subject)) {
+        vacuum = prompt("Where!? =(＾O ⋏ O＾)= !!!");
+        vacuum = prompt("Save yourself, "+ person +"! I will seek shelter under my human's bed!!");
+      } else {
+     	  response = prompt("That sounds boring =(＾● _ ●＾)=");
+        response = prompt("I'm going to take a nap now. I'm not listening but keep talking, "+ person +". \n=(＾-- ⋏ --＾)= zzz");
+      }
+      return false;
+
+    } else {
+      return false;
+    }
+    respond(response);
+  }
+</script>
+</body>
+</html>
